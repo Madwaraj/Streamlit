@@ -1,6 +1,6 @@
 import streamlit as st
-import plotly.express as px
 import pandas as pd
+import plotly.express as px
 
 # st.cache caches the function commands so that it is not reloaded every time the script is updated.
 
