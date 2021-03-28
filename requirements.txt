@@ -6,3 +6,4 @@ matplotlib
 spacy
 textblob
 gensim
+sumy
