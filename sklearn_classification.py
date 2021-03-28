@@ -12,10 +12,7 @@ from sklearn.decomposition import PCA
 
 import matplotlib.pyplot as plt
 
-st.title("Example")
-
-st.write(""" # Write keyword always run
-		This is normal""")
+st.title("Classification task on datasets available in sklearn")
 
 dataset_name = st.sidebar. selectbox("Select Dataset", ("Iris", "Breast Cancer", "Wine Dataset"))
 #st.write(dataset_name)
