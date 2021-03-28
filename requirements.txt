@@ -5,4 +5,4 @@ sklearn
 matplotlib
 spacy
 textblob
-gensim.summarization
+gensim
