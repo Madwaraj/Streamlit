@@ -9,4 +9,4 @@ gensim
 sumy
 transformers
 urllib
---find-links https://download.pytorch.org/whl/torch_stable.html torch==1.7.0+cpu
+--find-links https://download.pytorch.org/whl/torch_stable.html
