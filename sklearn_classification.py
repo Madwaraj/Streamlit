@@ -10,8 +10,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 
-import matplotlib.pyplot as plt
-
 st.title("Classification task on datasets available in sklearn")
 
 dataset_name = st.sidebar. selectbox("Select Dataset", ("Iris", "Breast Cancer", "Wine Dataset"))
