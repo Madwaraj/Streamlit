@@ -7,3 +7,6 @@ spacy
 textblob
 gensim
 sumy
+transformers
+urllib
+torch
