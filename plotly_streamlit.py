@@ -39,5 +39,5 @@ print(feature_selection)
 df = df[df['Name'] == stock_dropdown]
 df_features = df[feature_selection]
 
-plotly_figure = px.line(data_frame = df_features, x=df_features.index, y = feature_selection)
+plotly_figure = px.line(data_frame = df_features, x="df_features.index", y = "feature_selection", title = (str(stock_dropdown)) + 'timeline'))
 st.plotly_chart(plotly_figure)
