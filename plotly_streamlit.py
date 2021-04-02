@@ -38,6 +38,8 @@ stock_dropdown = st.sidebar.selectbox(label = "Stock Ticker", options = unique_s
 print(feature_selection)
 df = df[df['Name'] == stock_dropdown]
 df_features = df[feature_selection]
+
+# When feature selection is selcted
 if feature_selection:
 	plotly_figure = px.line(data_frame = df_features, x=df_features.index, y = feature_selection, title = (str(stock_dropdown) + ' ' + 'timeline'))
 	st.plotly_chart(plotly_figure)
