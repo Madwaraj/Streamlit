@@ -15,10 +15,8 @@ import matplotlib.pyplot as plt
 st.title("Classification task on datasets available in sklearn")
 
 dataset_name = st.sidebar. selectbox("Select Dataset", ("Iris", "Breast Cancer", "Wine Dataset"))
-#st.write(dataset_name)
 
 classifier_name = st.sidebar. selectbox("Select Classifier", ("KNN", "SVM", "Random Forest"))
-#st.write(classifier_name)
 
 def get_dataset(dataset_name):
 	if dataset_name == "Iris":
@@ -38,6 +36,7 @@ X,y = get_dataset(dataset_name)
 st.write("Shape of dataset", X.shape)
 st.write("Number of classes", len(np.unique(y)))
 
+#Hyperparameters for different methods
 def add_parameter_ui(clf_name):
 	params = dict()
 	if clf_name == "KNN":
@@ -55,14 +54,13 @@ def add_parameter_ui(clf_name):
 
 params = add_parameter_ui(classifier_name)
 
+# Select the classifier
 def get_classifier(clf_name, params):
 	if clf_name == "KNN":
 		clf = KNeighborsClassifier(n_neighbors = params["K"])
 	elif clf_name == "SVM":
 		clf = SVC(C = params["C"])
 	else:
-		#max_depth = st.sidebar.slider("max_depth", 2, 15)
-		#num_estimators = st.sidebar.slider("num_estimators", 10, 100)
 		clf = RandomForestClassifier(n_estimators = params["num_estimators"], max_depth = params["max_depth"], random_state = 1234)
 	return clf
 
@@ -74,18 +72,3 @@ y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 st.write(f"Classifier = {classifier_name}")
 st.write(f"Accuracy = {accuracy}")
-
-#PLOT
-pca = PCA(2)
-
-X_proj = pca.fit_transform(X)
-
-x1 = X_proj[:,0]
-x2 = X_proj[:,1]
-
-fig = plt.figure()
-plt.scatter(x1, x2, c=y)
-plt.xlabel("PC 1")
-plt.ylabel("PC 2")
-
-st.pyplot(fig)
