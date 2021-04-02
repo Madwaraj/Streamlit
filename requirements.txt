@@ -4,3 +4,4 @@ plotly
 sklearn
 gensim
 sumy
+spacy
