@@ -1,6 +1,6 @@
 import streamlit as st
 import urllib
-import torch
+#import torch
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelWithLMHead 
 
